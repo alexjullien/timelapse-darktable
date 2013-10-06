@@ -4,6 +4,9 @@
 
 This page details how to setup your environment to use timelapse-darktable
 
+To follow the steps in video:
+http://www.youtube.com/watch?v=cDSNwWh_vCg&feature=youtu.be&hd=1
+
 = Details =
 
 1. Open a terminal
