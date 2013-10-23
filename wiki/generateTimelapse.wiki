@@ -2,25 +2,43 @@
 
 = Main principle =
 
-- generate few XMP "source" to interpolate with darktable
+== First : project environment configuration ==
+
+- set up eclipse/java timelapse-darktable environment following wiki steps
+
+- be sure that you have the dependencies:
+
+/usr/bin/darktable-cli
+
+/usr/bin/mencoder
+
+
+== Then : Generate your timelapse ==
+
+1. define key frames of your future timelapse:
+
+- In darktable modify keyframe pictures
+
+- Copy corresponding XMP files in a "xmpRef" folder for instance
+
+- the "xmpRef" folder contains definition of key frames to interpolate for the whole timelapse
 
 practically: tune all parameters you want in darktables filters.
 then copy/paste all parameters in darktable to desired key frames of your timelapse.
 Tune these keyframes without adding/removing filters, just change tuning in filters.
-Select XMP files of keyframes > copy them into a xmp_source_interp folder
+Select XMP files of keyframes > copy them into a xmp source folder to be interpolated
 
-- set up eclipse/java timelapse-darktable environment folowwing wiki steps
 
-- create output_folder (where files will be stored)
+2. clean up your output_folder (where files will be stored)
 
-- launch Main.java in eclipse with arguments:
+if this step is not done, some file will be duplicated and you will get some strange results.
+
+You can also specify a new folder name (not existing yet)
+
+3. launch Main.java in eclipse with 3 (or 4/5) arguments:
+
 raw_source_folder xmp_source_interp output_folder (size optional)
 
-Warning : you should have created output_folder before launching Main.java
+4. go to output_folder and watch your timelapse : video.avi !
 
-- go to output_folder
-launch generateDarktableTimelapse.sh:
->> . generateDarktableTimelapse.sh
-
-
-You have your interpolated frames generated with darktable-cli and interpolated XMP files !!! :-)
+The timelapse video is done from interpolated frames generated with darktable-cli and interpolated XMP files !!! :-)
