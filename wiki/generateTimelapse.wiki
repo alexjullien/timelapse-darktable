@@ -35,9 +35,16 @@ if this step is not done, some file will be duplicated and you will get some str
 
 You can also specify a new folder name (not existing yet)
 
-3. launch Main.java in eclipse with 3 (or 4/5) arguments:
+3. launch Main.java with 3 (or 4/5) arguments:
 
 raw_source_folder xmp_source_interp output_folder (size optional)
+
+note:
+
+  * in eclipse by configuring arguments tab in Run > Run configurations...
+
+  * with exported JAR by adding arguments after java -jar 
+java -jar timelapse-dartable.jar "rawImg" "xmpKeys" "out" 
 
 4. go to output_folder and watch your timelapse : video.avi !
 
