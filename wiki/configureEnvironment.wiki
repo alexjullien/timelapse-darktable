@@ -12,42 +12,58 @@ http://www.youtube.com/watch?v=cDSNwWh_vCg&feature=youtu.be&hd=1
 1. Open a terminal
 
 2. Checkout last release of project :
-
+{{{
 svn checkout http://timelapse-darktable.googlecode.com/svn/trunk/ timelapse-darktable-read-only
+}}}
 
 3. Launch eclipse
 
 if not installed :
+
+{{{
 sudo apt-get install eclipse
+}}}
 
 4. Create a new project
 
 File > New > Java project
+
 Customize options if you want
-Name : TLDT_RO for example
+
+Name : timelapse-darktable for example
 
 5. Import source code into created project
 
 Right click on projects frame > Import
+
 Then choose "File System"
+
 Then browse to source repository "timelapse-darktable-read-only"
 
 6. Build path 
 
 Right click on projet > Build path > Configure build path
-CLick "Add JARs"
+
+Click "Add JARs"
+
 Pick in your project folder "./lib/commons-math3-3.2/commons-math3-3.2.jar"
+
 And "./lib/JSAP-2.1/lib/JSAP-2.1.jar"
 
 7. Use your project !
 
 Run configuration (little arrow beside "play" big green arrow)
+
 Choose main (if needed click on "+" icon on upper-left corner)
+
 Arguments : fill with arguments
 
-List of arguments provided by --help.
-
+List of arguments provided by 
+{{{
+--help.
+}}}
 
 Typical syntax:
-
+{{{
 -x xmpRef -i imgSrc -o outFolder -t linear -d -j -m
+}}}
