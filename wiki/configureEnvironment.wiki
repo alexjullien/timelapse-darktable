@@ -37,6 +37,7 @@ Then browse to source repository "timelapse-darktable-read-only"
 Right click on projet > Build path > Configure build path
 CLick "Add JARs"
 Pick in your project folder "./lib/commons-math3-3.2/commons-math3-3.2.jar"
+And "./lib/JSAP-2.1/lib/JSAP-2.1.jar"
 
 7. Use your project !
 
@@ -44,5 +45,9 @@ Run configuration (little arrow beside "play" big green arrow)
 Choose main (if needed click on "+" icon on upper-left corner)
 Arguments : fill with arguments
 
-3 arguments at least, 5 max:
-"folder_with_raw_files" "folder_with_XMP_to_interpolate" "folder_output" ["width"] ["height"]
+List of arguments provided by --help.
+
+
+Typical syntax:
+
+-x xmpRef -i imgSrc -o outFolder -t linear -d -j -m
