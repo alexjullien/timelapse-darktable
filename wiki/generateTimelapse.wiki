@@ -99,3 +99,6 @@ launch by configuring arguments tab in Run > Run configurations...
 == Finally ==
 
 go to the output folder and watch your timelapse : video.avi !
+
+see some examples:
+http://www.youtube.com/watch?v=C-0bCAIJR0c
