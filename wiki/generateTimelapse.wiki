@@ -63,7 +63,7 @@ In darktable modify keyframe pictures, with always the same filters as for all k
 You should have the same filters, but the interest is that you can adjust the tuning of these filters differently on each key frame.
 
 Important Note to use deflickering option :
- * activate "exposure" filter in the keyframes of the timelapse (constant or variable exposure for interpolation can be performed, deflickerin will be applied after interpolation)
+ * activate "exposure" filter in the keyframes of the timelapse (constant or variable exposure for interpolation can be performed, deflickering will be applied after interpolation)
 
 === Step2: copy XMP files of key-frames into a dedicated folder ===
 
