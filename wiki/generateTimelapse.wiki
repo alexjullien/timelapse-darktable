@@ -62,6 +62,9 @@ How to define key frames of your future timelapse ?
 In darktable modify keyframe pictures, with always the same filters as for all key frames. (use "copy all"/"paste all" options in light table)
 You should have the same filters, but the interest is that you can adjust the tuning of these filters differently on each key frame.
 
+Important Note to use deflickering option :
+ * activate "exposure" filter in the first keyframe of the timelapse (at least, interpolation on exposure can be performed also)
+
 === Step2: copy XMP files of key-frames into a dedicated folder ===
 
 Copy the XMP files of modified key frames in a folder (for instance xmpRef)
