@@ -1,5 +1,3 @@
-#List of darktable supported filters
-
 = Introduction =
 
 This page makes the list of dartkable supported filters in timelapse-darktable.
