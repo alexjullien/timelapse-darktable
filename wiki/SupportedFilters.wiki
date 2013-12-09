@@ -12,20 +12,35 @@ If you have a java exception error in a "read" operation, it should be because o
 
 = List of supported filters (IOP) =
 
-  * Atrous.class,
-  * Basecurve.class,
-  * Clipping.class,
-  * Colorzones.class,
-  * Denoiseprofile.class,
-  * Exposure.class,
-  * Graduatednd.class,
-  * Hotpixels.class,
-  * Levels.class,
-  * Shadhi.class,
-  * Sharpen.class,
-  * Temperature.class,
-  * Velvia.class,
-  * Vibrance.class,
+  * Anlfyeni
+  * Atrous
+  * Basecurve
+  * Bilat
+  * Bloom
+  * Cacorrect
+  * Channelmixer
+  * Clahe
+  * Clipping
+  * Colorzones
+  * Denoiseprofile
+  * Exposure
+  * Gamma
+  * Graduatednd
+  * Hotpixels
+  * Lens
+  * Levels
+  * Monochrome
+  * Nlmeans
+  * Rawdenoise
+  * Shadhi
+  * Sharpen
+  * Splittoning
+  * Spots
+  * Temperature
+  * Tonecurve
+  * Velvia
+  * Vibrance
+  * Vignette
 
 (for now versions for darktable 1.2.3 are implemented)
 
