@@ -42,6 +42,6 @@ If you have a java exception error in a "read" operation, it should be because o
   * Vibrance
   * Vignette
 
-(for now versions for darktable 1.2.3 are implemented)
+(for now versions up to darktable 1.2.3 are implemented)
 
 NB: Atrous.class means "atrous" filter of darktable
