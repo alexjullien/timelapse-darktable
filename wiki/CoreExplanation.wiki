@@ -10,7 +10,7 @@ The main steps of the global processing are listed by order:
   # export JPG from interpolated XMP file and source image of the source image folder for the whole series
   # compute the luminance curve of the series (external call: convert)
   # filter the luminance curve for deflickering target (external call: octave)
-  # calibrate the luminance sensitivity of the scene
+  # calibrate the luminance sensitivity of the scene (external call: convert)
   # apply deflickering target through darktable exposure module and save it in XMP
   # export the series in JPG with new XMP for the whole series
   # produce timelapse movie from the JPG series (external call: ffmpeg)
