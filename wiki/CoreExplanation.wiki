@@ -1,0 +1,19 @@
+#summary Explanation of the timelapse processing
+
+= Main steps =
+
+timelapse-darktable allows to treat a series of photo easily.
+The main steps of the global processing are listed by order:
+
+  # load XMP from keyframe reference folder (e.g. shots {10 50 100}).
+  # interpolate keyframes XMP filters values for the whole series. (e.g. 10 11 12 ... 98 99 100})
+  # export JPG from interpolated XMP file and source image of the source image folder for the whole series
+  # compute the luminance curve of the series (external call: convert)
+  # filter the luminance curve for deflickering target (external call: octave)
+  # calibrate the luminance sensitivity of the scene
+  # apply deflickering target through darktable exposure module and save it in XMP
+  # export the series in JPG with new XMP for the whole series
+  # produce timelapse movie from the JPG series (external call: ffmpeg)
+
+
+= Details =
