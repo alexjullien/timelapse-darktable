@@ -15,6 +15,7 @@ If you have a java exception error in a "read" operation, it should be because o
   * Anlfyeni
   * Atrous
   * Basecurve
+  * Bilateral
   * Bilat
   * Bloom
   * Cacorrect
@@ -41,6 +42,7 @@ If you have a java exception error in a "read" operation, it should be because o
   * Velvia
   * Vibrance
   * Vignette
+
 
 (for now versions up to darktable 1.2.3 are implemented)
 
