@@ -40,7 +40,9 @@ Right click on projects frame > Import
 
 Then choose "File System"
 
-Then browse to source repository "timelapse-darktable-read-only"
+Then "browse" to source repository "timelapse-darktable-read-only"
+And "check" the folder box
+"Finish"
 
 6. Build path 
 
