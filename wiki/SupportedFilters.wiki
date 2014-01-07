@@ -22,6 +22,7 @@ If you have a java exception error in a "read" operation, it should be because o
   * Channelmixer
   * Clahe
   * Clipping
+  * Colorin
   * Colorzones
   * Denoiseprofile
   * Exposure
