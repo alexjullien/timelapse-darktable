@@ -86,6 +86,7 @@ Note: you can define it freely, and then enter the right path in the graphical i
   * Copy RAW images that you have indentify as keyframes in your series: at least the first and the last images of the series ! (with their existing XMP if any)
   * import this folder in darktable
   * in darktable modify keyframe pictures in ./xmpRef
+  * respecting darktable supported filters & version: https://code.google.com/p/timelapse-darktable/wiki/SupportedFilters?ts=1389653790&updated=SupportedFilters
   * add exposure filter for all keyframes (at least with 0 tuning value) if you want use deflickering option
   * check that all keyframe pictures share the same filters history in darktable: (use "copy all"/"paste all" options in light table and then tune filters value if necessary)
 
