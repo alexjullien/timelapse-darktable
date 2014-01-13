@@ -6,18 +6,21 @@
 
 timelapse-darktable calls external executables.
 
-Be sure that you have these dependencies installed (with this path):
-
-
+Be sure that you have these dependencies installed
 
 {{{
-/usr/bin/darktable-cli
-/usr/bin/octave
-/usr/bin/convert
-/usr/bin/mencoder
+darktable-cli
+octave
+convert
+mencoder
 }}}
 
-If it is not the case, install following packages (ubuntu):
+(type "which darktable-cli" in a terminal for instance to check if darktable-cli is installed) :
+
+
+If it is not the case, install these packages.
+
+For Ubuntu user, type in a terminal:
 {{{
 sudo apt-get install darktable octave imagemagick mencoder
 }}}
@@ -25,7 +28,9 @@ sudo apt-get install darktable octave imagemagick mencoder
 
 == Download timelapse-darktable ==
 
-=== Option1 : Use executable JAR (easiest way) ===
+=== Option1 : Use executable JAR (easy way) ===
+
+*Download the JAR file*
 
 Download last executable JAR in the project trunk with the following svn command
 
@@ -39,39 +44,65 @@ NB: if you don't have svn, install subversion package
 sudo apt-get install subversion
 }}}
 
+*Execute timelapse-darkatble*
 
-=== Option2 : Use code in eclipse ===
+Right click on the JAR file > open with OpenSDK
+and follow instructions below (Create your timelapse)
+
+
+=== Option2 : Use code in eclipse (developer) ===
+
+skip this Option2 section if you are normal user ! Go to "Create your timelapse"
 
 set up eclipse/java timelapse-darktable environment following wiki steps:
 
 http://code.google.com/p/timelapse-darktable/wiki/configureEnvironment
 
 
-== Generate your timelapse ==
+
+== Create your timelapse ==
 
 This is the interesting part and why you are looking at this project !
 
 The main principle is to define some key frames, used as reference frames to generate the darktable configuration files (XMP).
+Then timelapse-darktabl interpolate the tunings and generate the video while deflickering your serie.
 
-To do so, open darktable and pick up at least 2 photos in your timelapse series.
+*The first time: try with a short series by copying only for instance the first and the second shots of the series to test your global confiugration. Remember: this project is still under development...*
 
-How to define key frames of your future timelapse ?
+=== Step1: recommanded folder architecture ===
 
-=== Step1: define key-frames and adjust filters in darktable ===
+The architecture below is recommanded to ease the use of timelapse-darktable in your image serie folder:
 
-In darktable modify keyframe pictures, with always the same filters as for all key frames. (use "copy all"/"paste all" options in light table)
+*Create these folders*
+  * ./imgSrc/ <- containing RAW or JPG images of the timelapse series
+  * ./xmpRef/ <- copy of RAW images that you have indentify as keyframes with their associated XMP (at least the first and the last images of the series)
+  * ./out <- output of timelapse-darktable are *all* put in this folder (folder "out" is automatically created if not existing)
+
+Note: you can define it freely, and then enter the right path in the graphical interface, but in this page we suppose that we respect this folder architecture.
+
+
+=== Step2: define key-frames ===
+
+  * Copy RAW images that you have indentify as keyframes in your series: at least the first and the last images of the series ! (with their existing XMP if any)
+  * import this folder in darktable
+  * in darktable modify keyframe pictures in ./xmpRef
+  * add exposure filter for all keyframes (at least with 0 tuning value) if you want use deflickering option
+  * check that all keyframe pictures share the same filters history in darktable: (use "copy all"/"paste all" options in light table and then tune filters value if necessary)
+
 You should have the same filters, but the interest is that you can adjust the tuning of these filters differently on each key frame.
 
-Important Note to use deflickering option :
- * activate "exposure" filter in the keyframes of the timelapse (constant or variable exposure for interpolation can be performed, deflickering will be applied after interpolation)
 
-=== Step2: copy XMP files of key-frames into a dedicated folder ===
+=== Step3: generate your timelapse video ===
 
-Copy the XMP files of modified key frames in a folder (for instance xmpRef)
-These XMP files will be the key frames taken into account by timelapse-darktbale.
+*With a graphical user interface (normal user)*
+  * Right click on the JAR file > open with OpenSDK
+  * Fill inputs following instruction on the window
+  * Click on "load keyframes"
+  * Click on "generate timelapse"
+  * go outside or take a cofee !
 
-=== Step3: execute timelapse-darktable ===
 
+*CLI (if desired):*
 Display help:
 {{{
 java -jar timelapse-darktable.jar --help
@@ -90,18 +121,27 @@ Typical command to generate your timelapse
 java -jar timelapse-darktable.jar -x xmpRef -i imgSrc -o outFolder -t linear -d -j -m
 }}}
 
-*Note:*
-You should clean up your output folder before executing the script (or take a new name).
+*Notes for troubleshooting:*
+  * Clean-up output folder if you don't know what you are doing...
+You should clean up your output folder before executing the script (or define a name of a non-existing folder, which will be automatically created during execution).
 if this step is not done, some file will be duplicated and you will get some unexpected results.
 
 
-In eclipse:
+In eclipse (developper):
 launch by configuring arguments tab in Run > Run configurations...
 
 
-== Finally ==
+== Finally: enjoy your video ==
 
-go to the output folder and watch your timelapse : video.avi !
+go to the output folder you have defined and watch your timelapse : ./out/video.avi
 
-see some examples:
-http://www.youtube.com/watch?v=C-0bCAIJR0c
+Note:
+  * ./out/video.avi : your timelapse video 
+  * ./out/`*`.XMP : generated XMP (reusable in darktable)
+  * ./out/`*`.JPG : darktable-cli exported frames
+  * ./out/deflick is the intermediate folder used for deflickering
+  * ./out/deflick/calib is a intermediate folder used for calibration for deflickering
+
+*see some examples:*
+  * http://www.youtube.com/watch?v=C-0bCAIJR0c&hd=1
+  * http://timelapse-darktable.blogspot.fr/
