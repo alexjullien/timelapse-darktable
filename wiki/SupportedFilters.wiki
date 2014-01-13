@@ -44,7 +44,12 @@ If you have a java exception error in a "read" operation, it should be because o
   * Vibrance
   * Vignette
 
-
-(for now versions up to darktable 1.2.3 are implemented)
-
 NB: Atrous.class means "atrous" filter of darktable
+
+
+== Supported darktable version ==
+
+for now versions up to darktable 1.2.3 are implemented.
+
+*NOTE* : darktable 1.4 has changed the XMP definition... timelapse-darktable is not yet compatible and needs an update.
+Please use it with a darkatble version up to 1.2.3
