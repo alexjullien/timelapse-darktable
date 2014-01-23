@@ -24,6 +24,7 @@ If you have a java exception error in a "read" operation, it should be because o
   * Clipping
   * Colorin
   * Colorzones
+  * Demosaic
   * Denoiseprofile
   * Exposure
   * Gamma
