@@ -23,6 +23,7 @@ If you have a java exception error in a "read" operation, it should be because o
   * Clahe
   * Clipping
   * Colorin
+  * Colorcontrast
   * Colorzones
   * Demosaic
   * Denoiseprofile
@@ -50,4 +51,4 @@ NB: Atrous.class means "atrous" filter of darktable
 
 == Supported darktable version ==
 
-versions up to darktable 1.4 are supported.
+versions up to darktable 1.4.1 are supported.
