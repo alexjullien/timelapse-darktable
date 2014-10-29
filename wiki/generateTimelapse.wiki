@@ -65,9 +65,9 @@ http://code.google.com/p/timelapse-darktable/wiki/configureEnvironment
 This is the interesting part and why you are looking at this project !
 
 The main principle is to define some key frames, used as reference frames to generate the darktable configuration files (XMP).
-Then timelapse-darktabl interpolate the tunings and generate the video while deflickering your serie.
+Then timelapse-darktable interpolate the tuning parameters and generate the video while deflickering your serie.
 
-*The first time: try with a short series by copying only for instance the first and the second shots of the series to test your global confiugration. Remember: this project is still under development...*
+*The first time: try with a short series by copying only for instance the first and the second shots of the series to test your global configuration. Remember: this project is still under development...*
 
 === Step1: recommanded folder architecture ===
 
@@ -75,19 +75,20 @@ The architecture below is recommanded to ease the use of timelapse-darktable in 
 
 *Create these folders*
   * ./imgSrc/ <- containing RAW or JPG images of the timelapse series
-  * ./xmpRef/ <- copy of RAW images that you have indentify as keyframes with their associated XMP (at least the first and the last images of the series)
+  and XMP files for keyframes at least (keyframes are starred pictures)
   * ./out <- output of timelapse-darktable are *all* put in this folder (folder "out" is automatically created if not existing)
 
 Note: you can define it freely, and then enter the right path in the graphical interface, but in this page we suppose that we respect this folder architecture.
 
+Starred pictures are keyframes of the timelapse (xmpRef)
+
 
 === Step2: define key-frames ===
 
-  * Copy RAW images that you have indentify as keyframes in your series: at least the first and the last images of the series ! (with their existing XMP if any)
-  * import this folder in darktable
-  * in darktable modify keyframe pictures in ./xmpRef
+  * Mark keyframes with one star (at least) in darktable
+  * in darktable modify keyframe pictures in ./imgSrc
   * respecting darktable supported filters & version: https://code.google.com/p/timelapse-darktable/wiki/SupportedFilters?ts=1389653790&updated=SupportedFilters
-  * add exposure filter for all keyframes (at least with 0 tuning value) if you want use deflickering option
+  * turn "on" *exposure filter* for all keyframes (at least with 0 tuning value) if you want use deflickering option
   * check that all keyframe pictures share the same filters history in darktable: (use "copy all"/"paste all" options in light table and then tune filters value if necessary)
 
 You should have the same filters, but the interest is that you can adjust the tuning of these filters differently on each key frame.
@@ -114,12 +115,11 @@ Typical command to generate your timelapse
  * with deflickering (-d),
  * generating each JPG frame (-j),
  * and the final movie (-m)
- * from key-frame XMP in xmpRef folder (-x xmpRef),
- * source/raw image in imgSrc folder (imgSrc),
+ * source/raw image in imgSrc folder (-i imgSrc),
  * and generated outputs in outFolder (-o outFolder):
 
 {{{
-java -jar timelapse-darktable.jar -x xmpRef -i imgSrc -o outFolder -t linear -d -j -m
+java -jar timelapse-darktable.jar -i imgSrc -o outFolder -t linear -d -j -m
 }}}
 
 *Notes for troubleshooting:*
